@@ -1,16 +1,16 @@
 ---
 title:  "[Github 블로그] 블로그 시작 전 환경설정"
-excerpt: "이곳에는 개시글에 대한 간단한 내용이 들어가는 것 같다."
+excerpt: "블로그를 본격적으로 시작하기에 앞서 필용한 도구들과 환경설정"
 
 categories:
-  - Blog
+  - Github Blog
 tags:
   - [Blog, HTML, Jekyll, Liquid, Minimal Mistake]
 
 toc: true
 toc_sticky: true
 
-date: 2021-11-05
+date: 2021-11-24
 last_modified_at: 2021-11-24
 ---
 
@@ -18,7 +18,7 @@ last_modified_at: 2021-11-24
 
 [식빵맘님의 방식](https://ansohxxn.github.io/blog/i-made-my-blog/#1-github-%EC%97%90%EC%84%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EC%93%B8-%EC%83%88%EB%A1%9C%EC%9A%B4-repository-%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%9C%EB%8B%A4)도 좋고 어떤 방법으로든 좋으니 로컬 저장소에 본인의 저장소를 만들어보자. 게시글을 만들고 블로그를 꾸미려면 원격 저장소만을 사용하는 것은 너무 불편하다.
 
-또한 Ruby, gem, bundle 을 다운받아 로컬 서버를 실행시켜 commit을 하지 않아도 블로그가 어떻게 변했는지 확인할 수 있도록 할 것이다. 이것도 꼭 필요한 것은 아니지만 적용되 화면을 확인하기 위해서 commit이 강제되는 것과 원하는 대로 변경이 되지 않았을 때 피로감이 굉장하기 때문이다.
+또한 Ruby, gem, bundle 을 다운받아 로컬 서버를 실행시켜 commit을 하지 않아도 블로그가 어떻게 변했는지 확인할 수 있도록 할 것이다. 이것도 꼭 필요한 것은 아니지만 적용된 화면을 확인하기 위해서 commit이 강제되는 것과 원하는 대로 변경이 되지 않았을 때 피로감이 굉장하기 때문이다.
 
 # 1. 로컬 저장소 만들기
 
