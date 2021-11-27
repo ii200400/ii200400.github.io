@@ -1,5 +1,5 @@
 ---
-title:  "[Github 블로그] 블로그 시작 전 환경설정"
+title:  "[Github Blog 제작기] 2. 깃허브 블로그와 유용한 툴 소개"
 excerpt: "블로그를 본격적으로 시작하기에 앞서 필용한 도구들과 환경설정"
 
 categories:
@@ -23,7 +23,7 @@ last_modified_at: 2021-11-24
 # 1. 로컬 저장소 만들기
 
 👉[테디노트님의 유튜브 동영상](https://www.youtube.com/watch?v=ACzFIAOsfpM&t=621s) 시청 및 [깃 다운로드](https://git-scm.com/) 필수
-{: .notice--custom-sun}
+{: .notice--custom-purple}
 본인의 경우 Git을 다운로드 받으면서 Git Bash도 같이 다운로드를 받았다.
 
 + ## 파일 생성

@@ -1,9 +1,9 @@
 ---
-title:  "[Github 블로그] 시작"
-excerpt: "이곳에는 개시글에 대한 간단한 내용이 들어가는 것 같다."
+title:  "[Github Blog 제작기] 1. 깃허브 블로그 정리 시작!"
+excerpt: "이곳에는 게시글에 대한 간단한 내용이 들어가는 것 같다."
 
 categories:
-  - Blog
+  - Github Blog
 tags:
   - [Blog, HTML, Jekyll, Liquid, Minimal Mistake]
 
@@ -28,4 +28,4 @@ last_modified_at: 2021-11-24
 # 기본 사항
 
 우선 위의 [테디노트님의 유튜브 동영상](https://www.youtube.com/watch?v=ACzFIAOsfpM&t=621s)을 보고 실습했다는 전제하에 글을 쓸 것이다.   
-또한 필자의 설명은 해당 블로그의 커밋과 똑같이 진행할 예정이다(항상 예정대로 되지는 않지만), 정 모르겠으면 [깃허브](https://github.com/ii200400/ii200400.github.io)를 참고하자.
+또한 필자의 설명은 해당 블로그의 커밋과 똑같이 진행할 예정이다(항상 예정대로 되지는 않지만), 정 모르겠으면 [해당 블로그의 깃허브](https://github.com/ii200400/ii200400.github.io)를 참고하자.
