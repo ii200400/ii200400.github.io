@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : "꼬깃꼬깃 안드로이드 메모장" # site tagline that appears below site title in masthead
 name                     : "게으른 너구리"
 description              : "안드로이드 공부를 하기위해 만든 블로그"
-url                      : "https://ii200400.github.io"
+# url                      : "https://ii200400.github.io"
 baseurl                  : ""
 repository               : "ii200400/ii200400.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
