@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : "꼬깃꼬깃 안드로이드 메모장" # site tagline that appears below site title in masthead
 name                     : "게으른 너구리"
 description              : "안드로이드 공부를 하기위해 만든 블로그"
-# url                      : "https://ii200400.github.io"
+url                      : "https://ii200400.github.io"
 baseurl                  : ""
 repository               : "ii200400/ii200400.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -266,7 +266,6 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
-
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
@@ -283,13 +282,12 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true # false로 변경
-      comments: true
-      share: true
-      related: true
-      mathjax: true
-      show_date: true # 추가
-      toc: true # 추가
-      toc_sticky: true # 추가
-      sidebar_main: true
+      author_profile: true # 작성자 프로파일 표기 여부
+      show_date: true # 포스트 작성 날짜 표기 여부
+      read_time: false # 포스트 읽는 시간 표기 여부
+      comments: true # 댓글 엔진 사용시 댓글 사용 여부
+      share: true # SNS 공유 버튼 사용 여부
+      related: true # 관련 포스트 목록 사용여부
+      mathjax: true # ?? 아마 수식 입력 관련 설정 ??
+      toc: true # 목차 사용 여부
+      toc_sticky: true # 목차 고정 여부

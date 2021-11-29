@@ -7,9 +7,6 @@ categories:
 tags:
   - [Blog, HTML, Jekyll, Liquid, Minimal Mistake]
 
-toc: true
-toc_sticky: true
-
 date: 2021-11-24
 last_modified_at: 2021-11-24
 ---
@@ -122,7 +119,11 @@ cmd에 `bundle exec jekyll serve`를 실행시키면 드디어 로컬 환경에�
 
 ![image](https://user-images.githubusercontent.com/19484971/143238158-0fbcb90a-6851-472f-a07b-f833b9eddba9.PNG){: .align-center}
 
-~~빨간줄 태러와 가끔 텍스트가 잘리는 이상한 버그 때문에 바꿀 의향이 점점 차오르고 있다...~~
+~~빨간줄 태러와 가끔 텍스트가 잘리는 이상한 버그 때문에 바꿀 의향이 점점 차오르고 있다...~~   
+
++ 추가
+
+결국 VScode로 변경하였다, 한글에 대한 버그와 더불어 자잘한 알 수 없는 버그들 때문에 사용이 너무 어려워서 바꾸었더니, 깃허브 관리 기능도 편리하고 버그도 없어서 사용하기 좋다.👍
 
 # 마치며
 

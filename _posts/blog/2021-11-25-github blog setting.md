@@ -1,5 +1,5 @@
 ---
-title:  "[Github Blog 제작기] 3. Jekyll 설정 파일"
+title:  "[Github Blog 제작기] 3. Minimal Mistake 의 설정파일(_config.yml) 총 정리"
 excerpt: "필요없는 파일을 지우고 블로그 설정을 알아보자!"
 
 categories:
@@ -7,15 +7,14 @@ categories:
 tags:
   - [Blog, HTML, Jekyll, Liquid, Minimal Mistake]
 
-date: 2021-11-25
-last_modified_at: 2021-11-27
+last_modified_at: 2021-11-29
 ---
 
 # 개요
 
-블로그 게시글을 올리기 전에 필요없는 파일 삭제와 블로그 설정을 변경을 먼저 진행하는 것이 순서에 맞겠다는 생각이 들어서 빠르게 살펴보고 게시글 만드는 것으로 넘어가보겠다.
+블로그 게시글을 올리기 전에 필요없는 파일 삭제와 블로그 설정을 변경을 먼저 진행하는 것이 순서에 맞겠다는 생각이 들어서 빠르게 살펴보고 게시글 만드는 것으로 넘어가보려고 했는데.. 목차보면 알겠지만 가이드를 참고하면서 엄청난 길이의 포스팅이 되어버렸다. 하하!🤗
 
-해당 글은 [Quick-Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide)를 참고하여 쓰여졌음을 밝힌다.
+전부 확인할 필요는 없고 목차를 보고 필요한 설정만 적용하는 것을 추천한다! 해당 글은 [Quick-Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide)를 참고하여 쓰여졌음을 밝힌다.
 
 # 1. 필요없는 파일 삭제🔥
 
@@ -57,7 +56,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 ## 사이트 설정
 
-### locale
+### locale (로컬라이징)
 
 각 나라에 맞는 코드를 넣으면 해당 나라에 맞는 로컬라이징을 지원해준다. 한국의 코드는 ko-KR 이다!👏   
 만약 다른 언어가 좋다! 하시는 분들은 [코드 테이블](https://docs.microsoft.com/en-us/previous-versions/commerce-server/ee825488(v=cs.20)?redirectedfrom=MSDN)을 참고하길 바란다.
@@ -98,7 +97,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 ### url
 
-[테디노트님의 유튜브 동영상](https://www.youtube.com/watch?v=ACzFIAOsfpM&t=621s)을 보셨다면 url을 바꾸고 시작했을 것이다. 해당 부분은 블로그의 호스트를 설정하는 부분으로 깃허브를 통해 호스팅을 하고있다면 `"https://닉네임.github.io"`과 비슷한 내용이 들어간다. 이 부분을 잘 설정 하지 않았다면 블로그를 아예 못 찾아갔을 것이다.
+블로그의 호스트를 설정하는 부분으로 깃허브를 통해 호스팅을 하고있다면 `"https://닉네임.github.io"`과 비슷한 내용이 들어간다. 이 부분을 잘못 설정한다면 블로그를 아예 못 찾아가게 된다.
 
 필자의 경우 아래와 같이 사용하고 있다.
 
@@ -116,16 +115,14 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
     url                      : "https://ii200400.github.io/someurl"
     baseurl                  : ""
 
-그러면 깃허브 서버를 통한 홈페이지는 `https://ii200400.github.io/someurl`을 통해 접근할 수 있고 jekyll 로컬 서버를 통한 홈페이지는 `http://127.0.0.1:4000`을 통해 접근할 수 있다.
+그러면 깃허브 서버를 통한 홈페이지는 `https://ii200400.github.io/someurl/`을 통해 접근할 수 있고 jekyll 로컬 서버를 통한 홈페이지는 `http://127.0.0.1:4000`을 통해 접근할 수 있다.
 
 아.. 무언가 불편함을 느낀 개발자가 설정을 수정하여 아래와 같이 바꾸었다면🤔
 
     url                      : "https://ii200400.github.io"
     baseurl                  : "/someurl"
 
-깃허브 서버를 통한 홈페이지는 `https://ii200400.github.io/someurl`을 통해 접근할 수 있고 jekyll 로컬 서버를 통한 홈페이지는 `http://127.0.0.1:4000/someurl`을 통해 접근할 수 있게 된다.👍
-
-필자의 경우 `baseurl`을 사용할 상황이 없기 때문에 공란으로 남겨두었다.
+깃허브 서버를 통한 홈페이지는 `https://ii200400.github.io/someurl/`을 통해 접근할 수 있고 jekyll 로컬 서버를 통한 홈페이지 또한 `http://127.0.0.1:4000/someurl/`을 통해 접근할 수 있게 된다.👍
 
 ### repository
 
@@ -137,9 +134,12 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 각자가 만든 레포를 확인하고 설정에 넣어주면 된다!👍
 
+❗️해당 설정을 작성을 정확히 하지 않거나 원격 저장소와 `origin`으로 연결을 하지 않으면 Jekyll 서버에서 에러가 생긴다.
+{: .notice--danger}
+
 ### teaser
 
-영화 티저 영상의 그 티저이다. 관련 게시글 목록에서 게시글에 대한 기본 이미지를 설정한다. 아래의 테스트 이미지(test.PNG)를 사용하여 아래와 같이 적용시켜보겠다. 보통 이미지들은 assets 파일에 넣으므로 테스트 이미지를 해당 파일에 넣고 진행했다.
+영화 티저 영상의 그 티저이다. 관련 게시글 목록에서 게시글에 대한 티저 이미지를 설정한다. 아래의 테스트 이미지(test.PNG)를 사용하여 아래와 같이 적용시켜보겠다. 보통 이미지들은 assets 파일에 넣으므로 테스트 이미지를 해당 파일에 넣고 진행했다.
 
 ![테스트 이미지](https://user-images.githubusercontent.com/19484971/143539160-66bfbd88-1265-4283-8737-8d763df8edcc.PNG){: width="50" .align-center}
 
@@ -158,7 +158,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 ### logo, masthead_title
 
-`logo`는 이름 그대로 로고 이미지를 설정할 수 있다는 것을 알 수 있는  `masthead_title`는 무엇인지 몰라서 찾아보니 `title`을 덮어쓴다는(override) 정도의 가이드 밖에 없었다.
+`logo`는 이름 그대로 로고 이미지를 설정할 수 있다는 것을 알 수 있는데  `masthead_title`는 무엇인지 몰라서 찾아보니 `title`을 덮어쓴다는(override) 정도의 가이드 밖에 없었다.
 
 위에서 사용한 예시 이미지를 그대로 사용해서 아래와 같이 적용시켜보면
 
@@ -168,14 +168,13 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 ![logo, masthead_title 예시](https://user-images.githubusercontent.com/19484971/143555587-5c030fcb-b6d2-445b-848e-beae3d9314df.PNG)
 {: width="400" .align-center .border-grey}
 
-이렇게 된다... `masthead_title`는 정말 무슨 기능인지 모르겠다;;
-
-필자는 로고를 넣고 싶긴 하였으  개인적으로 사용하는 것이 없어서 생략하였다. 다른 블로거분 중에서는 `title`과 `subtitle`을 공란으로 두고 로고만 사용하는 것도 보았다.
+이렇게 된다... `masthead_title`는 정말 무슨 기능인지 모르겠다;;🤨   
+참고로 다른 블로거분 중에서는 `title`과 `subtitle`을 공란으로 두고 로고만 사용하는 것도 보았다.
 
 이미지의 **추천 크기는 88x88** 이다.
 {: .notice--warning}
 
-### breadcrumbs (Beta)
+### breadcrumbs (사이트 경로) (Beta)
 
 현재 페이지의 경로를 페이지 윗부분에 보여준다.
 
@@ -191,30 +190,30 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 #### 2. pages 생성 혹은 jekyll-archives plugin 사용
 
-게시글을 `_posts` 파일을 만들어 작성하는 것 처럼 카테고리 분류들은 `_pages` 라는 파일을 만들어 정리하는데 해당 파일에 각 카테고리들을 만들어 정리하는 방식이다.
+카테고리들을 만들어 관련 게시물들을 모아두는 방식으로 2가지 방법으로 구현할 수 있다.
 
-이러한 카테고리들을 [jekyll-archives](https://github.com/jekyll/jekyll-archives)라는 플러그인을 활용하여 태그나 카테고리를 기반으로 자동 정리하는 방법도 있는데 필자는 해당 방식을 활용하고 있다.
+`_pages` 라는 파일에 `archive`들을 만들어 카테고리를 정리하는 방법과 [jekyll-archives](https://github.com/jekyll/jekyll-archives)라는 플러그인을 활용하여 태그나 카테고리를 기반으로 자동 정리하는 방법이다.
 
-`YFM(YAML Front Matter)`과 `archive`는 다음 포스팅에 소개할 예정이므로 조금 기다려주길 바란다.🙏
+필자는 `jekyll-archives`을 사용하려다가 생각과는 다르게 작동하는 것을 확인하고 `_pages` 폴더에 `archive`들을 만들어 카테고리를 정리하는 방법을 사용하고 있다. [다음 포스팅 링크 추가 요망]()에 `YFM(YAML Front Matter)`과 함께 소개할 예정이므로 조금 기다려주길 바란다.🙏
+
+만약 `jekyll-archives`에 관심이 있다면 [아카이브 설정 가이드](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings)를 참고하자.
 
 ### date_format, words_per_minute
 
 [게시글 업데이트 날짜 및 읽는 시간 표시](/github%20blog/github-blog-setting/#show_date-read_time)와 같이 병행해야 적용이 잘 되었는지 확인이 가능하다.
 
-`date_format`은 날짜를 표시할 형식을, `words_per_minute`은 분당 읽는 문자 수를 지정한다. `date_format`은 기본적으로 설정에 있지 않기 때문에 해당 줄을 ✒️추가해주어야 한다. 이 때문인지 날짜 형식을 html을 직접 바꿔서 수정한 블로거가 참 많았다. 꼭 설정에서 간단하게 수정하기를 바란다.
+`date_format`은 게시물 날짜를 표시할 형식을, `words_per_minute`은 분당 읽는 문자 수를 지정한다. `date_format`은 기본적으로 설정에 있지 않기 때문에 해당 줄을 ✒️추가해주어야 한다. 이 때문인지 날짜 형식을 html을 직접 바꿔서 수정한 블로거가 참 많았다. 꼭 설정에서 간단하게 수정하기를 바란다.
 
 📅[루비의 날짜 표기 형식](https://www.shortcutfoo.com/app/dojos/ruby-date-format-strftime/cheatsheet)을 보고 직접 날짜 형식을 지정해줄 수 있다.
 
     date_format              : "%Y년 %m월 %d일"
     words_per_minute         : 200
 
-![show_date, read_time 예시](https://user-images.githubusercontent.com/19484971/143603306-b475df91-53af-4799-968e-654270ab1da5.PNG){: .border-grey}
+![date_format 예시](https://user-images.githubusercontent.com/19484971/143603306-b475df91-53af-4799-968e-654270ab1da5.PNG){: .border-grey}
 
-필자는 `date_format`의 경우 위의 예시처럼 사용하고 `words_per_minute`은 사용하지 않았다.
+### comments provider (댓글 엔진)
 
-### comments provider
-
-댓글 기능을 어떤 provider를 통해서 구현할지 설정하는 곳이다. 각 provider에 따라서 구현 방법이 다르고 필자도 각각 해볼수가 없기 때문에 댓글 기능을 사용하고 싶다면 [가이드를 참고](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments)하여 각자 원하는 방법을 골라서 구현해보자. [게시글 댓글 사용 설정](/github%20blog/github-blog-setting/#comments)을 통해 넣고 싶은 게시글만 따로 넣을 수 있다.
+댓글 기능을 어떤 provider를 통해서 구현할지 설정하는 곳이다. 각 provider에 따른 적용 방법은 [가이드를 참고](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments)하여 각자 원하는 방법을 골라서 구현해보자. [게시글 댓글 사용 설정 링크 추가 요망]()을 통해 넣고 싶은 게시글만 따로 넣을 수 있다.
 
 필자의 경우 `utterances`를 사용할 예정이다. (언제 넣을지는 아무도 모른다.😅)
 
@@ -241,7 +240,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 📝`search_full_content`을 false로 두고 검색을 하면 포스트의 앞 50자들만 검색 대상에 들어간다고 한다. ture로 설정하면 본문 전체를 대상으로 하지만 느려진다.
 {: .notice--warning}
 
-> ![masthead-search](https://user-images.githubusercontent.com/19484971/143670185-726f5724-6ef5-4dc3-86cf-217a946c5d9f.gif)
+> ![masthead-search](https://user-images.githubusercontent.com/19484971/143670185-726f5724-6ef5-4dc3-86cf-217a946c5d9f.gif)   
 출처 - [minimal-mistakes/docs](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#site-search)
 
 ## SEO 설정
@@ -277,7 +276,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 어쨋든 해당 설정은 `analytics`을 사용할지, 어떤 `Analytics Provider`를 사용할지에 관한 설정이다. 커스텀을 제외한 모든 `Analytics Provider`는 모두 구글에서 제공하기 때문인지 `provider`와 `tracking_id`만 기입하면 되어 설정이 복잡해보이지는 않는다.
 
-아래는 analytics 설정 예시이다.
+아래는 Minimal Mistakes에서 제공하는 analytics 설정 예시이다.
 
     analytics:
       provider: "google-gtag"
@@ -307,25 +306,132 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 ![작성자 설정 예시](https://user-images.githubusercontent.com/19484971/143678204-f3964296-debc-4974-85eb-655550e84c04.PNG){: width="300" .align-center .border-grey}
 
-💡한 블로그에 여러 작성자가 있는 경우 포스트마다 YAML Front Matter을 커스텀하는 것으로 다른 작성자를 표시할 수 있다.
+💡한 블로그에 여러 작성자가 있는 경우 포스트마다 [YFM(YAML Front Matter) 링크 추가 요망]()을 커스텀하는 것으로 다른 작성자를 표시할 수 있다.
 {: .notice--warning}
 
 ## footer 설정
 
-작성자 설정의 links와 설정하는 방법이 똑같아 생략하겠다.😝 작성자 소개 부분과 footer 부분의 link 형식을 다르게 하고 싶은 사람들을 위해서 개별적으로 있는 것 같다.
+작성자 설정의 links와 설정하는 방법이 똑같아 생략하겠다.😝 작성자 소개 부분과 footer 부분의 link 형식을 다르게 하고 싶은 사람들을 위해서 `author`의 `links`와 별개로 있는 것 같다.
 
 ## 포스트 설정 (Front Matter Defaults)
 
-### show_date, read_time
+포스팅 [YFM(YAML Front Matter) 링크 추가 요망]()의 기본값을 설정한다. 2021년 11월 28일 기준으로 약필자의 약간의 설명이 포함된 minimal-mistakes에서 추천하는 `post`의 `Front Matter Defaults`는 아래와 같다.
 
-게시글이 작성된 날짜와 를 표시할지에 대한 설정이다.
+    defaults:
+      # _posts
+      - scope: # 해당 설정을 적용시킬 파일들을 지정
+          path: ""
+          type: posts
+        values: # 파일들이 가지는 YFM 기본값
+          layout: single # 사용할 html 파일 지정
+          author_profile: true # 작성자 프로파일 표기 여부
+          read_time: true # 포스트 읽는 시간 표기 여부
+          comments: true # 댓글 엔진 사용시 댓글 사용 여부
+          share: true # SNS 공유 버튼 사용 여부
+          related: true # 관련 포스트 목록 사용여부
 
-### comments
+정말 다양한 설정이 가능하지만 개인적으로 추천할 `values`들을 소개하면서 진행하겠다. 원하는 내용이 있다면 설정을 진행하면 된다.
 
-게시글에서 댓글 기능을 사용할지에 대한 설정이다.
+### scope
+
+`scope`에서는 `values`를 적용시킬 📁파일들을 지정한다.
+
+#### path
+
+`path`에는 설정을 적용시킬 폴더나 파일를 지정한다. `path`의 기본값은 `""`과 같다. 즉, `_config.yml` 파일이 있는 경로의 모든 파일을 대상으로 지정한다.
+
+❗️`glob patterns`라는 정규표현 비슷한 패턴을 활용하여 지정할 수도 있지만 특히 윈도우에서 최적화가 되어있지 않아 생기는 문제가 많다고 하여 사용하는 것은 전혀 추천하지 않는다.
+{: .notice--danger}
+
+#### type
+
+`type`에는 `path`에 있는 파일 중 특정한 종류의 파일들만을 지정한다.
+
+여기서 파일의 종류는 정확히는 모르겠지만 [jekyll의 Front Matter Defaults 가이드](https://jekyllrb.com/docs/configuration/front-matter-defaults/)와 [minimal-mistakes docs의 _config.yml](https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_config.yml)을 토대로 개인적으로 유추해보면... `_includes`나 `_layouts`같은 `_파일명`으로 적혀진 폴더 내의 파일을 의미하는 것 같다. 해당 폴더를 jekyll에서는 `collection`이라고 칭하며 사용자가 직접 만들 수 있다는 듯이 언급한다.    
+
+한 깃허브에 각각 파일을 나누어 여러 블로그를 만들어 사용하면 `path`와 `type` 모두를 사용할 지도 모르지만, 필자는 해당하지 않으므로 `type`만을 활용하고 있다.
+
+### values
+
+`scope`에서 지정된 파일들이 가질 YFM 기본값들을 나열한다. 사용자들도 원하는 키-값을 만들어 적용할 수 있다. 자세한 내용은 [YFM(YAML Front Matter) 링크 추가 요망]() 참고
+
+#### layout
+
+게시글을 어떤 html 파일로 보여줄지에 대한 설정, Minimal Mistakes에서는 기본적으로 `_layouts`의 `single.html`을 지정하는 설정이 들어가고 목록을 보여주는 화면이라면 `archive.html`를 사용하는 것도 볼 수 있다.
+
+[Jekyll의 front-matter-defaults 가이드](https://jekyllrb.com/docs/configuration/front-matter-defaults/)에 따르면 사용자들이 직접 `_layouts`에 html 파일을 만들어 커스텀을 할 수 있다고 언급되는데 필자는 못하였다.🤔
+
+#### author_profile
+
+[작성자 프로파일](http://localhost:4000/github%20blog/github-blog-setting/#%EC%9E%91%EC%84%B1%EC%9E%90-%EC%84%A4%EC%A0%95) 표기 여부이다. `false`로 지정하면 작성자 프로파일이 있던 부분이 공백으로 변하기만 하고 본문이 넓어지지는 않는다.
+
+![author_profile false](https://user-images.githubusercontent.com/19484971/143796129-811292d8-e1b3-475b-9020-29b82650507a.PNG){: .width="600" .align-center .border-grey}
+
+#### show_date, read_time
+
+게시글이 작성된 날짜와 게시글을 읽는데 걸리는 예상 시간를 표시할지에 대한 설정이다. 위의 `author_profile`의 예시 그림을 참고하면 날짜와 읽는 시간이 적용된 것을 볼 수 있다. `read_time`는 값만 바꾸면 되고 `show_date`의 경우 기본 설정에는 키가 없어 사용자가 직접 추가해주어야 한다. 
+
+    defaults:
+      # _posts
+      - scope:
+          path: ""
+          type: posts
+        values:
+          layout: single
+          show_date: true
+          read_time: true # 추가!
+
+#### share
+
+공유하기 기능이 있는 버튼의 표시 여부를 결정한다.
+
+![share 예시](https://user-images.githubusercontent.com/19484971/143800042-74c2314d-ce92-43c8-85c0-40d058d72a1d.PNG){: .width="600" .align-center .border-grey}
+
+#### related
+
+참고 포스팅 목록의 표시 여부를 결정한다.
+
+![related 예시](https://user-images.githubusercontent.com/19484971/143800393-b096e7a1-9052-4233-91d9-116f8dc8cd79.PNG){: .width="600" .align-center .border-grey}
+
+#### toc (목차)
+
+toc(Table of contents) 표시 여부를 결정한다.
+
+![toc 예시](https://user-images.githubusercontent.com/19484971/143800598-8bc893c5-1279-4929-a972-e50259f3368f.PNG){: .width="300" .align-center .border-grey}
+
+#### toc_sticky
+
+toc(목차)가 우측 화면에서 항상 볼 수 있도록 고정된다. 즉, 스크롤을 내려도 목차를 볼 수 있다.
+
+#### classes
+
+html에서 body에 class를 추가해주는 설정이다.
+
+예시:
+
+    classes:
+        - landing
+        - dark-theme
+
+결과:
+
+    <body class="layout--splash landing dark-theme">
+
+다양한 class를 넣을 수 있지만 가장 커스텀에 잘 쓰이는 class 중 하나만 소개하고 넘어가려고 한다. 아래와 같은 설정을 추가하면 본문 부분의 화면이 넓어지게 만들 수 있다.
+
+    classes: wide
+
+![wide 예시](https://user-images.githubusercontent.com/19484971/143805159-7892fdbc-d2d7-4b80-a36d-15d14598c630.PNG){: .width="600" .align-center .border-grey}
+
+💡위의 예시 사진처럼 toc을 사용하면서 `wide`를 적용하게되면 toc이 제목과 본문 글 사이에 고정된다.
+{: .notice--warning}
 
 # 마치며
 
-없던 영어 울렁증도 생길 것 같다..🥴 간단하게 하려고 했는데 설정 하나하나 흥미가 생겨 거의 설정 가이드를 3일동안 정독을 해버리고 말았다. 대신 설정에 대해서 상당히 잘 알게 되었다, 다른 블로그에서 어렵게 바꾸던 형식을 설정으로 간단히 바꿀 수 있는 것도 있었다.
+없던 영어 울렁증도 생길 것 같다..🥴 간단하게 하려고 했는데 설정 하나하나 흥미가 생겨 거의 설정 가이드를 4일동안 정독을 해버리고 말았다. ~~가이드에서 다른 가이드 링크 걸어두는 것은 정말 반칙이었다.~~ 대신 설정에 대해서 상당히 잘 알게 되었다, 다른 블로그에서 어렵게 바꾸던 형식을 설정으로 간단히 바꿀 수 있는 것도 있었다.
 
 다음에는 정말로 YFM(YAML Front Matter) 설명을 곁들인 게시글을 작성할 것이다. 다음 게시글을 쓰는데 얼마나 걸릴지 모르겠지만 빠르게 작성하길 희망하면서 미래의 나에게 맡기겠다.😁
+
++ 추가
+
+Atom에서 VScode로 텍스트 에디터를 바꾸었다. 툴을 잘 바꾸는 편이 아닌데 사용하다가 한글에 대한 버그가 걸려서 텍스트가 사라지면 3줄씩도 사라지고 ctrl+z로도 복구를 못하는 경우가 꽤 많아 화나서 바꾸었다. 아직까지 VScode에 대한 사용은 원활하다!👍

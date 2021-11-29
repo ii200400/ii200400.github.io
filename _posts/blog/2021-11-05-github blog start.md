@@ -7,9 +7,6 @@ categories:
 tags:
   - [Blog, HTML, Jekyll, Liquid, Minimal Mistake]
 
-toc: true
-toc_sticky: true
-
 date: 2021-11-05
 last_modified_at: 2021-11-24
 ---
