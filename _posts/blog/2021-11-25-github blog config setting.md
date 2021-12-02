@@ -1,5 +1,5 @@
 ---
-title:  "[Github Blog 제작기] 3. Minimal Mistake 의 설정파일(_config.yml) 총 정리"
+title:  "[Github Blog 제작기] 3. Minimal Mistake 의 설정파일(_config.yml) 총 정리 ❗️스크롤 압박"
 excerpt: "필요없는 파일을 지우고 블로그 설정을 알아보자!"
 
 categories:
@@ -153,7 +153,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 **500x300 크기의 이미지를 추천**하며 비율이 맞지 않으면 ✂️잘린다.
 {: .notice--danger}
 
-💡티저 이미지는 각 게시물마다 [YFM(YAML Front Matter) 링크 추가 요망]()을 통해 따로 지정해줄 수 있다.
+💡티저 이미지는 각 게시물마다 [YFM(YAML Front Matter)](/github%20blog/github-blog-post-writing/#yfmyaml-front-matter)을 통해 따로 지정해줄 수 있다.
 {: .notice--warning}
 
 ### logo, masthead_title
@@ -186,7 +186,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 #### 1. category based permalink 사용
 
-[YFM(YAML Front Matter) 링크 추가 요망]()를 통해 각 게시물에 permalink를 적용시킬 수 있다, 각 게시물에 페이지의 경로를 일일이 작성해주어야 해서 필자는 아래의 방법을 사용한다.
+[YFM(YAML Front Matter)](/github%20blog/github-blog-post-writing/#yfmyaml-front-matter)를 통해 각 게시물에 permalink를 적용시킬 수 있다, 각 게시물에 페이지의 경로를 일일이 작성해주어야 해서 필자는 아래의 방법을 사용한다.
 
 #### 2. pages 생성 혹은 jekyll-archives plugin 사용
 
@@ -194,13 +194,13 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 `_pages` 라는 파일에 `archive`들을 만들어 카테고리를 정리하는 방법과 [jekyll-archives](https://github.com/jekyll/jekyll-archives)라는 플러그인을 활용하여 태그나 카테고리를 기반으로 자동 정리하는 방법이다.
 
-필자는 `jekyll-archives`을 사용하려다가 생각과는 다르게 작동하는 것을 확인하고 `_pages` 폴더에 `archive`들을 만들어 카테고리를 정리하는 방법을 사용하고 있다. [다음 포스팅 링크 추가 요망]()에 `YFM(YAML Front Matter)`과 함께 소개할 예정이므로 조금 기다려주길 바란다.🙏
+필자는 `jekyll-archives`을 사용하려다가 생각과는 다르게 작동하는 것을 확인하고 `_pages` 폴더에 `archive`들을 만들어 카테고리를 정리하는 방법을 사용하고 있다. [다른 게시글 링크 추가 요망]()에서 소개할 예정이므로 조금 기다려주길 바란다.🙏
 
 만약 `jekyll-archives`에 관심이 있다면 [아카이브 설정 가이드](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings)를 참고하자.
 
 ### date_format, words_per_minute
 
-[게시글 업데이트 날짜 및 읽는 시간 표시](/github%20blog/github-blog-setting/#show_date-read_time)와 같이 병행해야 적용이 잘 되었는지 확인이 가능하다.
+[게시글 업데이트 날짜 및 읽는 시간 표시](/github%20blog/github-blog-config-setting/#show_date-read_time)와 같이 병행해야 적용이 잘 되었는지 확인이 가능하다.
 
 `date_format`은 게시물 날짜를 표시할 형식을, `words_per_minute`은 분당 읽는 문자 수를 지정한다. `date_format`은 기본적으로 설정에 있지 않기 때문에 해당 줄을 ✒️추가해주어야 한다. 이 때문인지 날짜 형식을 html을 직접 바꿔서 수정한 블로거가 참 많았다. 꼭 설정에서 간단하게 수정하기를 바란다.
 
@@ -213,7 +213,7 @@ Minimal Mistakes에는 `default`, `air`, `aqua`, `contrast`, `dark`, `dirt`, `ne
 
 ### comments provider (댓글 엔진)
 
-댓글 기능을 어떤 provider를 통해서 구현할지 설정하는 곳이다. 각 provider에 따른 적용 방법은 [가이드를 참고](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments)하여 각자 원하는 방법을 골라서 구현해보자. [게시글 댓글 사용 설정 링크 추가 요망]()을 통해 넣고 싶은 게시글만 따로 넣을 수 있다.
+댓글 기능을 어떤 provider를 통해서 구현할지 설정하는 곳이다. 각 provider에 따른 적용 방법은 [가이드를 참고](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments)하여 각자 원하는 방법을 골라서 구현해보자.
 
 필자의 경우 `utterances`를 사용할 예정이다. (언제 넣을지는 아무도 모른다.😅)
 
@@ -306,7 +306,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 ![작성자 설정 예시](https://user-images.githubusercontent.com/19484971/143678204-f3964296-debc-4974-85eb-655550e84c04.PNG){: width="300" .align-center .border-grey}
 
-💡한 블로그에 여러 작성자가 있는 경우 포스트마다 [YFM(YAML Front Matter) 링크 추가 요망]()을 커스텀하는 것으로 다른 작성자를 표시할 수 있다.
+💡한 블로그에 여러 작성자가 있는 경우 포스트마다 [YFM(YAML Front Matter)](/github%20blog/github-blog-post-writing/#yfmyaml-front-matter)을 통해 다른 작성자를 표시할 수 있다.
 {: .notice--warning}
 
 ## footer 설정
@@ -315,7 +315,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 ## 포스트 설정 (Front Matter Defaults)
 
-포스팅 [YFM(YAML Front Matter) 링크 추가 요망]()의 기본값을 설정한다. 2021년 11월 28일 기준으로 약필자의 약간의 설명이 포함된 minimal-mistakes에서 추천하는 `post`의 `Front Matter Defaults`는 아래와 같다.
+포스팅 [YFM(YAML Front Matter)](/github%20blog/github-blog-post-writing/#yfmyaml-front-matter)의 기본값을 설정한다. 2021년 11월 28일 기준으로 약필자의 약간의 설명이 포함된 minimal-mistakes에서 추천하는 `post`의 `Front Matter Defaults`는 아래와 같다.
 
     defaults:
       # _posts
@@ -353,7 +353,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 ### values
 
-`scope`에서 지정된 파일들이 가질 YFM 기본값들을 나열한다. 사용자들도 원하는 키-값을 만들어 적용할 수 있다. 자세한 내용은 [YFM(YAML Front Matter) 링크 추가 요망]() 참고
+`scope`에서 지정된 파일들이 가질 YFM 기본값들을 나열한다. 사용자들도 원하는 키-값을 만들어 적용할 수 있다. 자세한 내용은 [YFM 커스텀](http://localhost:4000/github%20blog/github-blog-post-writing/#yfm-%EC%BB%A4%EC%8A%A4%ED%85%80) 참고
 
 #### layout
 
@@ -363,13 +363,13 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 #### author_profile
 
-[작성자 프로파일](http://localhost:4000/github%20blog/github-blog-setting/#%EC%9E%91%EC%84%B1%EC%9E%90-%EC%84%A4%EC%A0%95) 표기 여부이다. `false`로 지정하면 작성자 프로파일이 있던 부분이 공백으로 변하기만 하고 본문이 넓어지지는 않는다.
+[작성자 프로파일](/github%20blog/github-blog-config-setting/#%EC%9E%91%EC%84%B1%EC%9E%90-%EC%84%A4%EC%A0%95) 표기 여부이다. `false`로 지정하면 작성자 프로파일이 있던 부분이 공백으로 변하기만 하고 본문이 넓어지지는 않는다.
 
 ![author_profile false](https://user-images.githubusercontent.com/19484971/143796129-811292d8-e1b3-475b-9020-29b82650507a.PNG){: .width="600" .align-center .border-grey}
 
 #### show_date, read_time
 
-게시글이 작성된 날짜와 게시글을 읽는데 걸리는 예상 시간를 표시할지에 대한 설정이다. 위의 `author_profile`의 예시 그림을 참고하면 날짜와 읽는 시간이 적용된 것을 볼 수 있다. `read_time`는 값만 바꾸면 되고 `show_date`의 경우 기본 설정에는 키가 없어 사용자가 직접 추가해주어야 한다. 
+게시글이 작성된 날짜와 게시글을 읽는데 걸리는 예상 시간의 표기 여부 설정이다. 날짜 형식과 읽는 시간 조정에 대한 설정은 [다른 설정](/github%20blog/github-blog-config-setting/#date_format-words_per_minute)을 조정해야한다. `read_time`는 값만 바꾸면 되고 `show_date`의 경우 기본 설정에는 키가 없어 사용자가 직접 추가해주어야 한다. 
 
     defaults:
       # _posts
@@ -423,7 +423,7 @@ html에서 body에 class를 추가해주는 설정이다.
 
 ![wide 예시](https://user-images.githubusercontent.com/19484971/143805159-7892fdbc-d2d7-4b80-a36d-15d14598c630.PNG){: .width="600" .align-center .border-grey}
 
-💡위의 예시 사진처럼 toc을 사용하면서 `wide`를 적용하게되면 toc이 제목과 본문 글 사이에 고정된다.
+💡위의 예시 사진처럼 `toc`을 사용하면서 `wide`를 적용하게되면 `toc`이 제목과 본문 글 사이에 고정된다.
 {: .notice--warning}
 
 # 마치며
