@@ -357,9 +357,9 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 #### layout
 
-게시글을 어떤 html 파일로 보여줄지에 대한 설정, Minimal Mistakes에서는 기본적으로 `_layouts`의 `single.html`을 지정하는 설정이 들어가고 목록을 보여주는 화면이라면 `archive.html`를 사용하는 것도 볼 수 있다.
+게시글을 어떤 html 파일로 보여줄지에 대한 설정, Minimal Mistakes에서는 다양한 반응형 레이아웃(single, archive index, search, splash, and paginated home page)을 제공한다. 하지만 게시글에서 가장 적절한 레이아웃은 `single`밖에 없다.😅
 
-[Jekyll의 front-matter-defaults 가이드](https://jekyllrb.com/docs/configuration/front-matter-defaults/)에 따르면 사용자들이 직접 `_layouts`에 html 파일을 만들어 커스텀을 할 수 있다고 언급되는데 필자는 못하였다.🤔
+[Jekyll의 front-matter-defaults 가이드](https://jekyllrb.com/docs/configuration/front-matter-defaults/)에 따르면 사용자들이 직접 `_layouts`에 html 파일을 만들어 커스텀을 할 수 있다고 언급되다.
 
 #### author_profile
 

@@ -1,5 +1,5 @@
 ---
-title:  "[Github Blog 제작기] 4. 게시글 작성 방법"
+title:  "[Github Blog 제작기] 4. 게시글 작성 방법과 팁"
 excerpt: "게시글 작성 형식과 YFM, 이모지, 텍스트 강조 방법 등 게시글 작성에 대한 팁을 정리해보았다!✨"
 
 categories:
@@ -35,13 +35,13 @@ my_var: "짜잔!" # 예시를 위해 추가!
 
 게시글 파일을 만든 이후에는 가장 첫 줄부터 YAML front matter을 작성해야 한다. 공식 YAML 문서에 쓰여진 YAML 소개는 다음과 같다.👇
 
-    %YAML 1.2
-    ---
-    YAML: YAML Ain't Markup Language™
-
-    What It Is:
-      YAML is a human-friendly data serialization
-      language for all programming languages.
+> %YAML 1.2
+> ---
+> YAML: YAML Ain't Markup Language™
+>
+> What It Is:
+>   YAML is a human-friendly data serialization
+>   language for all programming languages.
 
 데이터를 직렬화할 때 사용하는 언어라고 소개가 되어있다, 해당 언어를 활용해서 게시물에 대한 기본값을 설정하는 것을 YAML front matter이라고 말하고 줄여서 YFM이라고 한다.
 
@@ -108,9 +108,7 @@ YFM은 `---`로 시작하고 끝나며 중간에는 다양한 `키: 값`형식�
 
 ## 기타
 
-위에서 소개한 내용 외에도 `teaser`, `comments`, 
-
-Jekyll에서 사용하는 변수들은 더 확인하고 싶다면 [Jekyll page-variables](https://jekyllrb.com/docs/variables/#page-variables)를 참고하자!
+위에서 소개한 내용 외에도 `teaser`, `comments` 등 여러가지 설정을 적용할 수 있다. 변수들은 더 확인하고 싶다면 [Jekyll page-variables](https://jekyllrb.com/docs/variables/#page-variables) 혹은 [minimal-mistakes/docs](https://github.com/mmistakes/minimal-mistakes/tree/master/docs/_posts)를 참고하자!
 
 ## YFM 커스텀
 
@@ -145,58 +143,28 @@ Jekyll에서 사용하는 변수들은 더 확인하고 싶다면 [Jekyll page-v
 ![YFM 결과](https://user-images.githubusercontent.com/19484971/143829460-91e41223-327f-43c9-8164-4f22dcf2e31b.PNG){: width="600" .align-center .border-grey}
 
 물론.. 게시글 본문에 `{{page.my_var}}`을 사용할 수도 있다.
-![캡처2](https://user-images.githubusercontent.com/19484971/144003325-b60b334d-6f13-4e1c-98b3-efd21b024fea.PNG){: width="400"}
+![page.my_var](https://user-images.githubusercontent.com/19484971/144003325-b60b334d-6f13-4e1c-98b3-efd21b024fea.PNG){: width="400"}
 
 html 파일의 `site.--`이나 `page.--` 등의 변수들은 모두 YFM을 통해 설정이 가능하며 원하는 값을 넣어 커스텀하는 것도 가능하다는 것을 알 수 있다!✨   
 
-## YFM 작성자 설정
-
-위에서는 게시물에 직접 작성자에 대한 정보가 들어갔지만, 이를 더 쉽게 관리할 수 있는 방법이 있다.
-
-`_data` 폴더에 `authors.yml` 파일을 만들어 작성자의 정보를 관리하는 것이다. `_config.yml`에서 `author`을 작성한 것 처럼 아래와 같이 작성자에 대한 정보를 기입하자.
-
-    # /_data/authors.yml
-
-    Billy Rick:
-      name        : "Billy Rick"
-      bio         : "What do you want, jewels? I am a very extravagant man."
-      avatar      : "/assets/images/bio-photo-2.jpg"
-      links:
-        - label: "Email"
-          icon: "fas fa-fw fa-envelope-square"
-          url: "mailto:billyrick@rick.com"
-        - label: "Website"
-          icon: "fas fa-fw fa-link"
-          url: "https://thewhip.com"
-        - label: "Twitter"
-          icon: "fab fa-fw fa-twitter-square"
-          url: "https://twitter.com/extravagantman"
-
-    Cornelius Fiddlebone:
-      name        : "Cornelius Fiddlebone"
-      bio         : "I ordered what?"
-      avatar      : "/assets/images/bio-photo.jpg"
-      links:
-        - label: "Email"
-          icon: "fas fa-fw fa-envelope-square"
-          url: "mailto:cornelius@thewhip.com"
-        - label: "Twitter"
-          icon: "fab fa-fw fa-twitter-square"
-          url: "https://twitter.com/rhymeswithsackit"
-
-그리고 게시글의 YFM에 작성자의 이름만 적어주면 된다.👍
-
-    author: Billy Rick
+💡author에 대한 설정은 [minimal-mistakes authors 가이드](https://mmistakes.github.io/minimal-mistakes/docs/authors/)에서 더 편리한 방법을 확인할 수 있다. 한 블로그에 여러 작성자가 있다면 꼭 확인하자!
+{: .notice--warning}
 
 # 본문 작성
 
-기본적으로 MarkDown(마크다운) 문법을 사용하여 블로그 게시글을 작성한다. 마크다운 문법에 관해서는 정리가 잘 된 블로그가 많으니 필자는 따로 정리하지 않겠다. 추천하는 [블로그 링크](https://velog.io/@starry3ones/MarkDown-%EC%82%AC%EC%9A%A9%EB%B2%95)를 올려두고 넘어가겠다.
+YFM 작성을 마쳤으면 기본적으로 MarkDown(마크다운) 문법을 사용하여 블로그 게시글 본문을 작성한다. 마크다운 문법에 관해서는 정리가 잘 된 블로그가 많으니 필자는 따로 정리하지 않겠다. 추천하는 [블로그 링크](https://velog.io/@starry3ones/MarkDown-%EC%82%AC%EC%9A%A9%EB%B2%95)를 올려두고 넘어가겠다.
+
+본문을 작성할 때 코드를 올리는 경우도 있고 이미지를 업로드 하는 경우도 있을 것이다. 본문을 작성할 때 도움이 되는 방법에 대해서 간략하게 정리를 해보았다!🎉
 
 ## 이미지 추가
 
 본문에 이미지를 첨부할 때 꼭 주의할 점이 있다, 이미지를 블로그 운영 중인 레포지토리에 저장을 하면 안된다. 이유는 단순히 크기가 크기 때문인데, 깃허브를 기반으로하는 블로그는 1GB가 넘으면 안되는 제약사항이 있기 때문이다.
 
-이때 깃허브를 활용하여 이미지를 첨부하는 방법이 있다. Issue 혹은 Commit으로 들어가면 Comment를 남기는 부분에 이미지를 드로그 앤 드롭하면 나오는 경로를 그대로 복사/붙여넣기 하면 된다.
+이때 깃허브를 활용하여 이미지를 첨부하는 방법이 있다. Issue 혹은 Commit으로 들어가자. 내 것, 남 것 레포지토리 구별없이 그림의 빨간줄 위치를 클릭하면 해당 commit에 들어갈 수 있다. (필자는 혹시 등록할까 무서워 본인의 레포에서만 들어간다.)
+
+![into commit](https://user-images.githubusercontent.com/19484971/144553596-4d874a30-9cfa-45b0-85f3-91f318e1c81d.PNG)
+
+ 아래로 쭉 스크롤을 하면 Comment를 남기는 부분이 있는데 이곳에 이미지를 드로그 앤 드롭하면 나오는 경로를 그대로 복사/붙여넣기 하면 된다.
 
 ![이미지 예시](https://user-images.githubusercontent.com/19484971/143887052-e63f54f9-6dc0-44d2-b6de-d206e167d230.PNG){: width="400" .align-center .border-grey}
 
@@ -217,67 +185,33 @@ html 파일의 `site.--`이나 `page.--` 등의 변수들은 모두 YFM을 통�
 > 일본의 휴대전화 문자 메시지에서 시작되어 지금은 대부분의 스마트폰 및 PC 등 다양한 환경에서 사용되는 그림 문자.   
 [https://namu.wiki/w/이모지](https://namu.wiki/w/%EC%9D%B4%EB%AA%A8%EC%A7%80)
 
-간단하게 거의 대부분의 플렛폼에서 자유롭게 사용할 수 있는 이모티콘이다! 
-윈도우10의 경우 `윈도우+.`, 맥북이면 `command+control+spaceBar`으로 바로 이모지를 넣을 수 있다.
+간단하게 말하자면 거의 대부분의 플렛폼에서 자유롭게 사용할 수 있는 이모티콘이다! 윈도우10의 경우 `윈도우+.`, 맥북이면 `command+control+spaceBar`으로 바로 이모지를 넣을 수 있다.
 
 ![Emoji 예시](https://user-images.githubusercontent.com/19484971/143882217-b12312a2-5f9d-4dfe-9b83-40a4cdd12ac7.PNG){: width="400" .align-center}
 
 ## button
 
-텍스트를 버튼 모양으로 바꿀 수 있다.
+**링크**를 버튼 모양으로 바꿀 수 있다. 텍스트도 사용이 가능하기는 하나 크기는 조절되지 않는 것이 확인되었다. 예시는 아래와 같다.
 
-Text
-{: .btn}
+| 버튼 유형   | 결과 | 클래스 | Kramdown(마크다운) 사용법 |
+| ------        | ------- | ----- | ------- |
+| Default       | [Text](#link){: .btn} | `.btn` | `[Text](#link){: .btn}` |
+| Primary       | [Text](#link){: .btn .btn--primary} | `.btn .btn--primary` | `[Text](#link){: .btn .btn--primary}` |
+| Success       | [Text](#link){: .btn .btn--success} | `.btn .btn--success` | `[Text](#link){: .btn .btn--success}` |
+| Warning       | [Text](#link){: .btn .btn--warning} | `.btn .btn--warning` | `[Text](#link){: .btn .btn--warning}` |
+| Danger        | [Text](#link){: .btn .btn--danger} | `.btn .btn--danger` | `[Text](#link){: .btn .btn--danger}` |
+| Info          | [Text](#link){: .btn .btn--info} | `.btn .btn--info` | `[Text](#link){: .btn .btn--info}` |
+| Inverse       | [Text](#link){: .btn .btn--inverse} | `.btn .btn--inverse` | `[Text](#link){: .btn .btn--inverse}` |
+| Light Outline | [Text](#link){: .btn .btn--light-outline} | `.btn .btn--light-outline` | `[Text](#link){: .btn .btn--light-outline}` |
 
-    Text
-    {: .btn}
+| 버튼 크기 | 결과 | 클래스 | Kramdown(마크다운) 사용법 |
+| ----------- | ------- | ----- | -------- |
+| X-Large     | [X-Large Button](#){: .btn .btn--primary .btn--x-large} | `.btn .btn--primary .btn--x-large` | `[Text](#link){: .btn .btn--primary .btn--x-large}` |
+| Large       | [Large Button](#){: .btn .btn--primary .btn--large} | `.btn .btn--primary .btn--large` | `[Text](#link){: .btn .btn--primary .btn--large}` |
+| Default     | [Default Button](#){: .btn .btn--primary} | `.btn .btn--primary` | `[Text](#link){: .btn .btn--primary }` |
+| Small       | [Small Button](#){: .btn .btn--primary .btn--small} | `.btn .btn--primary .btn--small` | `[Text](#link){: .btn .btn--primary .btn--small}` |
 
-Text
-{: .btn .btn--primary}
-
-    Text
-    {: .btn .btn--primary}
-
-Text
-{: .btn .btn--success}
-
-    Text
-    {: .btn .btn--success}
-
-Text
-{: .btn .btn--warning}
-
-    Text
-    {: .btn .btn--warning}
-
-Text
-{: .btn .btn--danger}
-
-    Text
-    {: .btn .btn--danger}
-
-Text
-{: .btn .btn--info}
-
-    Text
-    {: .btn .btn--info}
-
-Text
-{: .btn .btn--inverse}
-
-    Text
-    {: .btn .btn--inverse}
-
-Text
-{: .btn .btn--light-outline}
-👆위에 텍스트가 있는데 안보인다, 커서를 올려보자.
-
-    Text
-    {: .btn .btn--light-outline}
-
-필자의 경우 텍스트에 사용하지는 않고 링크에 사용하는데, 특히 카테고리와 태그에 사용한다. 만약 '위의 색이 마음에 안든다!' 하면 직접 원하는 색상이나 모양을 css에 넣어 [원하는 버튼 링크 추가 요망]()을 만들면 된다.
-
-가이드에 따르면 [버튼의 크기도 변경](https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/#buttons)할 수 있다고 하는데 필자는 적용이 되지 않는다;;😢
+만약 '위의 색이 마음에 안든다!' 하면 직접 원하는 색상이나 모양을 css에 넣어 [원하는 버튼 링크 추가 요망]()을 만들면 된다.
 
 ## notice
 
@@ -301,7 +235,44 @@ Text
 `{: .notice--danger}`
 {: .notice--danger}
 
-가끔 주위사항이나 팁을 쓸 때 사용하게 된다. notice에 생각보다 큰 문제가 있는데.. 바로 테마마다 notice 블록 색상이 달라지는 것이다. 때문에 개인적으로는 [notice에 관한 css를 수정 링크 추가 요망]()해서 사용하고 있다.
+가끔 주위사항이나 팁을 쓸 때 사용하게 된다. minimal-mistakes의 notice에 생각보다 큰 문제가 있는데.. 바로 테마마다 notice 블록 색상이 달라지는 것이다. 때문에 개인적으로는 [notice에 관한 css를 수정 링크 추가 요망]()해서 사용하고 있다.
+
+## GitHub Gist(요지)
+
+깃허브에서 코드를 끌어오는 듯한 코드 삽입을 보고 방법을 찾아보았다. [한 블로그](https://blog.soobinpark.com/147)를 보고 따라해보았는데 여러 방법 중에서도 github gist를 활용한 코드가 깔끔하고 색도 너무 화려하지 않으면서 강조되는 것이 좋아서 추천한다.
+
+### GitHub Gist란?
+
+github gist는 짧은 코드나 메모 등을 기록 또는 공유 할 수 있도록 github에서 제공하는 무료 서비스라고 한다. [깃허브 공식 문서](https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)에 따르면 모든 gist는 레포지토리이기 때문에 forked 나 clone도 가능하다고 한다.
+
+### 1. Github Login
+
+gist를 사용하려면 github 계정이 필수이다. [github gist](https://gist.github.com/)에 접속하여 github 계정으로 로그인을 한다. 이후 오른쪽 상단의 `+` 버튼을 누르면 새 gist를 작성하는 페이지로 이동한다.
+
+![gist create button](https://user-images.githubusercontent.com/19484971/144540270-18634bcd-d392-4dbe-8f1b-836015609943.PNG){: width="200" .align-center .border-grey}
+
+### 2. Gist 새 글 작성
+
+만약 이미 로그인이 되어있다면 새 글을 작성하는 화면이 바로 보일 것이다. 
+
+![new gist create](https://user-images.githubusercontent.com/19484971/144538862-96452eb9-b27c-45a8-a2ac-4bf2dd3ffea2.PNG){: width="600" .align-center .border-grey}
+
+`Gist description...`에 작성하려는 gist에 대한 간단한 설명을, `Filename including extension...` 에 확장자를 포함한 파일명을 입력해주고 본문을 작성해준다.
+
+작성을 마쳤다면 원하는 gist 유형을 선택하고 생성하자!
+
+![gist create type](https://user-images.githubusercontent.com/19484971/144542998-470f34c5-7a55-49d0-b6ba-52b01c976a51.PNG){: width="300" .align-center .border-grey}
+
++ Create secret gist : 검색 엔진에 검색이 되지는 않지만 URL을 가지고 있는 모두가 볼 수 있는 gist
++ Create public gist : 모든 사람이 볼 수 있는 gist
+
+### 3. Gist 공유하기
+
+![gist embed](https://user-images.githubusercontent.com/19484971/144544691-c98724b5-06cc-4c83-8608-f8f476366a05.PNG){: width="600" .align-center .border-grey}
+
+생성을 마치면 위와 같은 화면이 나올 것이다. 유형을 Embed로 선택하고 복사하여 코드를 올리고 싶은 곳에 붙여넣기만하면 아래와 같이 표현된다.
+
+<script src="https://gist.github.com/ii200400/07a31068a6c7d86f88fefde60dcf0f1f.js"></script>
 
 # 마치며
 
