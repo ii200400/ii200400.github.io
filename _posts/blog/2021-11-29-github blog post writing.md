@@ -28,7 +28,7 @@ my_var: "짜잔!" # 예시를 위해 추가!
     2012-09-12-how-to-write-a-blog.md
 
 필자의 경우 관리를 위해 `_post` 내의 폴더 내에서 폴더를 하나 더 만들어 게시글을 나눠 관리하고 있다.
-![posts](https://user-images.githubusercontent.com/19484971/144011396-2dfb5e21-b7e6-441c-bbb3-3aba292cceec.PNG){: .width="600" .align-center .border-grey}
+![posts](https://user-images.githubusercontent.com/19484971/144011396-2dfb5e21-b7e6-441c-bbb3-3aba292cceec.PNG){: width="600" .align-center .border-grey}
 
 
 # YFM(YAML front matter)

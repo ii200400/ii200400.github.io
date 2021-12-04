@@ -365,7 +365,7 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 [작성자 프로파일](/github%20blog/github-blog-config-setting/#%EC%9E%91%EC%84%B1%EC%9E%90-%EC%84%A4%EC%A0%95) 표기 여부이다. `false`로 지정하면 작성자 프로파일이 있던 부분이 공백으로 변하기만 하고 본문이 넓어지지는 않는다.
 
-![author_profile false](https://user-images.githubusercontent.com/19484971/143796129-811292d8-e1b3-475b-9020-29b82650507a.PNG){: .width="600" .align-center .border-grey}
+![author_profile false](https://user-images.githubusercontent.com/19484971/143796129-811292d8-e1b3-475b-9020-29b82650507a.PNG){: width="600" .align-center .border-grey}
 
 #### show_date, read_time
 
@@ -385,19 +385,19 @@ feed 라는 것을 커스텀할 수 있다. 기본적으로 `feed.xml`을 사용
 
 공유하기 기능이 있는 버튼의 표시 여부를 결정한다.
 
-![share 예시](https://user-images.githubusercontent.com/19484971/143800042-74c2314d-ce92-43c8-85c0-40d058d72a1d.PNG){: .width="600" .align-center .border-grey}
+![share 예시](https://user-images.githubusercontent.com/19484971/143800042-74c2314d-ce92-43c8-85c0-40d058d72a1d.PNG){: width="600" .align-center .border-grey}
 
 #### related
 
 참고 포스팅 목록의 표시 여부를 결정한다.
 
-![related 예시](https://user-images.githubusercontent.com/19484971/143800393-b096e7a1-9052-4233-91d9-116f8dc8cd79.PNG){: .width="600" .align-center .border-grey}
+![related 예시](https://user-images.githubusercontent.com/19484971/143800393-b096e7a1-9052-4233-91d9-116f8dc8cd79.PNG){: width="600" .align-center .border-grey}
 
 #### toc (목차)
 
 toc(Table of contents) 표시 여부를 결정한다.
 
-![toc 예시](https://user-images.githubusercontent.com/19484971/143800598-8bc893c5-1279-4929-a972-e50259f3368f.PNG){: .width="300" .align-center .border-grey}
+![toc 예시](https://user-images.githubusercontent.com/19484971/143800598-8bc893c5-1279-4929-a972-e50259f3368f.PNG){: width="300" .align-center .border-grey}
 
 #### toc_sticky
 
@@ -421,7 +421,7 @@ html에서 body에 class를 추가해주는 설정이다.
 
     classes: wide
 
-![wide 예시](https://user-images.githubusercontent.com/19484971/143805159-7892fdbc-d2d7-4b80-a36d-15d14598c630.PNG){: .width="600" .align-center .border-grey}
+![wide 예시](https://user-images.githubusercontent.com/19484971/143805159-7892fdbc-d2d7-4b80-a36d-15d14598c630.PNG){: width="600" .align-center .border-grey}
 
 💡위의 예시 사진처럼 `toc`을 사용하면서 `wide`를 적용하게되면 `toc`이 제목과 본문 글 사이에 고정된다.
 {: .notice--warning}
