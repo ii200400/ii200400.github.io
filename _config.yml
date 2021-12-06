@@ -301,3 +301,17 @@ defaults:
       author_profile: true
       # sidebar_main: true
       classes: wide
+
+  # tag & category
+  - scope:
+      path: ""
+      type: tag
+    values:
+      author_profile: true
+      classes: wide
+  - scope:
+      path: ""
+      type: category
+    values:
+      author_profile: true
+      classes: wide
