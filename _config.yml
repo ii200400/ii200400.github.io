@@ -315,3 +315,11 @@ defaults:
     values:
       author_profile: true
       classes: wide
+
+# Automated Jekyll Archives for GitHub Pages
+# https://aneejian.com/automated-jekyll-archives-github-pages/
+# Archives
+collections:
+  archives:
+    output: true
+    permalink: /archives/:path/
