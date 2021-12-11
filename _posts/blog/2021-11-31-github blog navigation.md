@@ -66,7 +66,7 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 
 `taxonomy`에 꼭 게시물에 작성해준 YFM의 `categories` 중 하나를 입력해준다. 대소문자, 띄어쓰기 등 오타가 있다면 연관된 게시물을 모으지 못하므로 유의하자.
 
-잘 적용이 되었다면 아래와 같이 특정 카테고리만 모아놓은 화면이 나온다.
+잘 적용이 되었다면 `permalink`에 적어놓은 url을 통해 아래와 같이 특정 카테고리만 모아놓은 화면을 볼 수 있다.
 
 ![카테고리 예시3](https://user-images.githubusercontent.com/19484971/144563865-e4ff1e9e-12f8-41a4-931d-7aa9586cbd38.PNG){: width="600" .align-center .border-grey}
 
@@ -78,13 +78,28 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 
 <script src="https://gist.github.com/ii200400/353d7e84ae170c1f9717e31cb5348d64.js"></script>
 
-이런식으로 태그와 카테고리가 생길 때마다 새롭게 페이지들을 추가해 나가는 것도 방법이지만... 이것을 자동으로 해주는 플러그인이 있다.👇
+## Category, Tag Archive 링크 설정
 
-## jekyll-archives plugin 사용
+게시물 아래의 태그나 카테고리 링크를 클릭하면 일반적으로는 `../categories/#카테고리명`으로 연결되지 `../categories/카테고리명`으로 연결되지 않을 것이다. 위에서 만든 페이지와 연결시키고 싶다면 `_config.yml`에서 아래와 같이 설정을 수정하자.
+
+    category_archive:
+    type: jekyll-archives # 수정! 카테고리 링크 주소를 변경하는 역할(category-list.html 참고)
+    path: /categories/
+    tag_archive:
+    type: jekyll-archives  # 수정! 태그 링크 주소를 변경하는 역할(tag-list.html 참고)
+    path: /tags/
+
+## jekyll-archives plugin 후기
+
+처음에 필자는 jekyll-archives plugin을 적용시켜서 블로그를 사용했는데 깃허브에서만 화면이 제대로 작동하지 않는 것을 확인하였다. 
+
+검색을 해보니 **jekyll-archives plugin은 깃허브에서는 적용이 되지 않는다**고 한다. 여러가지 찾아보다가 [jekyll의 collection 기능으로 구현하는 방법](https://aneejian.com/automated-jekyll-archives-github-pages/#triggering-the-action-manually)도 찾았지만 이 방법은 jekyll를 잘 모르는 필자가 설정을 임의로 변경하는 방법을 몰라 그냥 결국 플러그인도 제거하고 `categories`와 `tags` 화면만 구현하여 사용하고 있다.😭
+
+## ~~jekyll-archives plugin 사용~~
 
 [jekyll-archives](https://github.com/jekyll/jekyll-archives)은 `tag-archive.md` 파일들과 `category-archive.md` 파일들을 자동으로 생성해주는 착한 플러그인이다. 하지만 `tags-archive.md`와 `categories-archive.md` 페이지는 만들어주지 않으므로 두 파일은 꼭 위의 글을 보고 직접 만들어주어야 한다.
 
-### jekyll-archives 설치
+### ~~jekyll-archives 설치~~
 
 오랫만에 터미널을 열어서 아래의 명령어로 jekyll-archives를 설치해주자.
 
@@ -92,14 +107,14 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 
 ![캡처2](https://user-images.githubusercontent.com/19484971/144571518-3fade511-cdcb-4466-8dd8-cba6f036508e.PNG){: width="400" .align-center .border-grey}
 
-### Gemfile 수정
+### ~~Gemfile 수정~~
 
 `Gemfile`이라는 확장자도 없는 파일에 아래의 명령어를 추가해준다.
 
     # Gemfile
     gem 'jekyll-archives' # 추가!
 
-### _config.yml 수정
+### ~~_config.yml 수정~~
 
 <script src="https://gist.github.com/ii200400/bc047c7680071d772b86ea39d23cfe3d.js"></script>
 
@@ -107,7 +122,7 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 
 필자의 경우 `Github Blog`라는 카테고리를 사용하고 있으므로 `.../categories/Github-Blog/` 혹은 `.../categories/github-blog/`로 찾아갈 수 있었다.
 
-### 다른 아카이브들
+### ~~다른 아카이브들~~
 
 날짜에 따라서 아카이브를 생성할 수도 있는데 해당 게시글에서 모두 소개하기 어려우므로 [jekyll-archives 설정 가이드](https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md) 링크를 남기고 생략하겠다.
 
@@ -119,7 +134,7 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 
 그런데 이렇게 해도 `../categories/`와 `../tags/`에만 적용되고 `jekyll-archives`가 자동 생성한 아카이브들은 적용이 안되는 것을 볼 수 있다. 이 부분은 다른 파일을 수정해야 한다.
 
-### jekyll-archives 아카이브 설정
+### ~~jekyll-archives 아카이브 설정~~
 
 `jekyll-archives`가 자동 생성한 아카이브들은 html 파일에서 직접 설정해야 한다. `_config.yml`에서 `jekyll-archives` 설정 중 `layout`을 확인하고 해당하는 html 파일을 찾아가자 설정을 변경하지 않았다면 보통 `archive-taxonomy`일 것이다.
 
@@ -151,3 +166,5 @@ Jekyll의 `_data` 폴더의 `navigation.yml` 파일을 통해서 네비게이션
 상단 네비게이션 구성까지 마쳤다!🎉 조금은 블로그 같은 모습이 나오는데 아직 불편하고 아쉬운 점이 많다... 블로그 사이드바를 꾸미는 방법을 올릴까 생각도 하였지만 우선 블로그를 조금 꾸미고 진행하는 것으로 하려고 한다.
 
 다음 게시글은 너무 못 생긴 블로그를 그나마 시원하게 만들 css들을 조금 소개할 예정이다. 웹을 이미 알고 있는 사람들의 경우 이미 적용했을 가능성도 있지만 필자처럼 웹 개발자가 아닌 경우에는 도움이 되는 글이 될 것이다!
+
+~~블로그 구현이 너무 시간이 걸려서 회사에 입사를 한 후에 다시 작성을 시작할 것 같다.~~
